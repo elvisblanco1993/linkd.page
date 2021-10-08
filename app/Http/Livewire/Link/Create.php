@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Link;
 
 use App\Models\Link;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class Create extends Component
 {
@@ -27,6 +28,7 @@ class Create extends Component
                 'type' => 'link',
                 'title' => $this->title,
                 'url' => $this->url,
+                'uuid' => Str::uuid()->toString(),
             ]);
 
             // Update the preview

@@ -12,7 +12,9 @@ class Link extends Model
         'type',
         'title',
         'url',
-        'order'
+        'order',
+        'uuid',
+        'clickthrough',
     ];
 
     use HasFactory;

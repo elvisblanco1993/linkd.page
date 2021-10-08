@@ -30,7 +30,7 @@
                                     <div class="col-span-2 ml-4">
                                         <div class="grid grid-cols-2 items-center">
                                             <label for="bgvalue">Background color</label>
-                                            <input type="text" id="bgvalue" wire:model.defer="bgvalue">
+                                            <input type="color" id="bgvalue" class="w-full" wire:model.defer="bgvalue">
                                         </div>
                                     </div>
                                 @endif
@@ -39,7 +39,7 @@
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
                                         <label for="textcolor">Page text color</label>
-                                        <input type="text" id="textcolor" class="w-full" wire:model.defer="textcolor" placeholder="#000000">
+                                        <input type="color" id="textcolor" class="w-full" wire:model.defer="textcolor" placeholder="#000000">
                                     </div>
                                 </div>
 
@@ -49,7 +49,7 @@
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
                                         <label for="btnbg">Button background color</label>
-                                        <input type="text" id="btnbg" class="w-full" wire:model.defer="btnbg" placeholder="#FFFFFF">
+                                        <input type="color" id="btnbg" class="w-full" wire:model.defer="btnbg" placeholder="#FFFFFF">
                                     </div>
                                 </div>
 
@@ -57,7 +57,7 @@
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
                                         <label for="btnfg">Button text color</label>
-                                        <input type="text" id="btnfg" class="w-1/2" wire:model.defer="btnfg" placeholder="#000000">
+                                        <input type="color" id="btnfg" class="w-full" wire:model.defer="btnfg" placeholder="#000000">
                                     </div>
                                 </div>
 
