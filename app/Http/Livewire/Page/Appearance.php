@@ -55,7 +55,6 @@ class Appearance extends Component
         $this->btnbg = auth()->user()->page->btnbg;
         $this->socpos = auth()->user()->page->socpos;
         $this->soccolor = auth()->user()->page->soccolor;
-        // $this->bgtype = auth()->user()->page->bgtype;
         $this->bgvalue = auth()->user()->page->bgvalue;
         $this->textcolor = auth()->user()->page->textcolor;
 

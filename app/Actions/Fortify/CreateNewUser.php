@@ -33,6 +33,8 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
+        $user->createAsStripeCustomer();
+
         \App\Models\Page::create([
             'handler' => $input['handler'],
             'name' => $input['name'],

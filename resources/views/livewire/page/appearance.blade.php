@@ -1,10 +1,10 @@
 <div>
     <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="md:flex gap-8 space-y-8">
+        <div class="md:flex gap-8 space-y-8 sm:space-y-0">
             <div class="w-full md:w-2/3 xl:col-span-5">
-                <div class="w-full md:w-2/3">
+                <div class="w-full">
                     <div class="px-4">
-                        <form wire:submit.prevent="save">
+                        <form wire:submit.prevent="save" class="p-4 bg-white rounded-lg shadow-lg">
                             <div class="grid grid-cols-2 gap-4">
                                 {{-- Page Background --}}
                                 <div class="col-span-2">

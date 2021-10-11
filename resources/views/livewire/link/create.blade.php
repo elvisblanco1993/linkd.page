@@ -1,5 +1,5 @@
 <div>
-    <div class="w-full mb-6">
+    <div class="w-full mb-6 p-4 bg-white rounded-lg shadow-lg">
         <ul class="text-left" wire:sortable="updateLinksOrder">
             @forelse ($links as $key => $link)
                 <li class="w-full border-b py-4" x-data="{ open: false }" wire:sortable.item="{{ $link->id }}" wire:key="link-{{ $link->id }}">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div x-cloak x-show="open" class="my-6 border rounded-lg p-4 bg-white shadow-xl">
+                    <div x-cloak x-show="open" class="my-6 border rounded-lg p-4 bg-white shadow-lg">
                         @livewire('link.update', ['link' => $link], key(rand() * $link->id))
                     </div>
                 </li>
@@ -37,7 +37,7 @@
             {{__("Add Link")}}
         </button>
 
-        <div x-cloak x-show="open" class="my-6 border rounded-lg p-4 bg-white shadow-xl">
+        <div x-cloak x-show="open" class="my-6 border rounded-lg p-4 bg-white shadow-lg">
             <form wire:submit.prevent="save">
                 <div class="text-left mb-2">
                     <label for="title" class="block font-medium text-sm text-gray-700">Title</label>

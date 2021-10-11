@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class Settings extends Component
 {
@@ -40,12 +41,17 @@ class Settings extends Component
 
     public function saveProfile()
     {
+        $page_id = auth()->user()->page->id;
+        $this->validate([
+            'handler' => "required|regex:/^\S*$/u|unique:pages,handler,$page_id"
+        ]);
         if (!is_null($this->avatar)) {
             if (auth()->user()->page->avatar) {
                 Storage::delete('public/avatars/'. auth()->user()->page->avatar);
             }
             $this->avatar->storeAs('public/avatars', $this->avatar->getClientOriginalName());
         }
+
 
         Page::where('user_id', auth()->user()->id)
             ->update([
@@ -76,7 +82,8 @@ class Settings extends Component
                     [
                         'page_id' => $page_id,
                         'type' => $platform,
-                        'url' => $this->$platform ?? null
+                        'url' => $this->$platform ?? null,
+                        'uuid' => Str::uuid()->toString(),
                     ]);
             }
 

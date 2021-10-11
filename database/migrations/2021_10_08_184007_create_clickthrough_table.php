@@ -16,6 +16,7 @@ class CreateClickthroughTable extends Migration
         Schema::create('clickthrough', function (Blueprint $table) {
             $table->id();
             $table->string('uuid');
+            $table->integer('page_id');
             $table->string('country');
             $table->string('state');
             $table->string('city');

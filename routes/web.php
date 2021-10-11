@@ -17,7 +17,7 @@ use App\Http\Livewire\Page\Appearance;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web/home');
 });
 
 Route::get('/{handler}', [PageController::class, 'public'])->name('linkd.public');

@@ -49,8 +49,6 @@
 
                 @livewire('public.page', [
                     'page' => $page,
-                    'links' => $links,
-                    'socials' => $socials
                 ])
             </div>
         </div>

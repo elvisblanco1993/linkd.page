@@ -21,10 +21,10 @@ sudo mysql_secure_installation;
 sudo mysql -u root -p;
 
 # Create DB and set DB user privileges
-CREATE DATABASE voicebits;
-CREATE USER 'voicebits'@'localhost' IDENTIFIED BY 'Bahia#9398!!';
-ALTER USER 'voicebits'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Bahia#9398!!';
-GRANT ALL PRIVILEGES ON voicebits.* to 'voicebits'@'localhost' WITH GRANT OPTION;
+CREATE DATABASE linkd;
+CREATE USER 'linkd'@'localhost' IDENTIFIED BY 'bahia9397';
+ALTER USER 'linkd'@'localhost' IDENTIFIED WITH mysql_native_password BY 'bahia9397';
+GRANT ALL PRIVILEGES ON linkd.* to 'linkd'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 exit;
 
