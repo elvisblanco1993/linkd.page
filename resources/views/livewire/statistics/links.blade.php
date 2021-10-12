@@ -22,7 +22,7 @@
                     <span>{{$link->total}}</span>
                 </li>
             @empty
-
+                <div class="text-center">There's no suficient information at this time.</div>
             @endforelse
         </ul>
     </div>

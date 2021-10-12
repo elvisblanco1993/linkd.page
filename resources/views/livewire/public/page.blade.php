@@ -9,7 +9,7 @@
                     wire:click="$emit('socialClicked', '{{$link->uuid}}', '{{$page->id}}')"
                 >
                     @if ($page->soccolor == 'black')
-                        <img src="" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
+                        <img src="{{asset("assets/$link->type.svg")}}" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
                     @else
                         <img src="{{asset("assets/$link->type-white.svg")}}" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
                     @endif
@@ -24,7 +24,7 @@
         @forelse ($links as $link)
             <a
                 href="{{$link->url}}"
-                class="w-full rounded-lg text-center font-semibold px-4 py-2 mb-4 transition preview-btn shadow-lg"
+                class="w-full rounded-lg text-sm text-center font-semibold px-4 py-3 mb-4 transition preview-btn border"
                 target="_blank"
                 wire:click="$emit('linkClicked', '{{$link->uuid}}', '{{$page->id}}')"
                 >{{$link->title}}</a>
@@ -42,7 +42,7 @@
                     wire:click="$emit('socialClicked', '{{$link->uuid}}', '{{$page->id}}')"
                 >
                     @if ($page->soccolor == 'black')
-                        <img src="" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
+                        <img src="{{asset("assets/$link->type.svg")}}" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
                     @else
                         <img src="{{asset("assets/$link->type-white.svg")}}" alt="{{$link->type}} icon" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"/>
                     @endif

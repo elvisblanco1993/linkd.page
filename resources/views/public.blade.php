@@ -25,12 +25,12 @@
             .preview-btn {
                 background-color: {{$page->btnbg}};
                 color: {{$page->btnfg}};
-                border-color: {{$page->btnfg}}
+                border-color: {{$page->btnbg}}
             }
             .preview-btn:hover {
                 background-color: {{$page->btnfg}};
                 color: {{$page->btnbg}};
-                border-color: {{$page->btnbg}}
+                /* border-color: {{$page->btnbg}} */
             }
         </style>
 

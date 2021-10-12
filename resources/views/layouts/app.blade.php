@@ -40,8 +40,22 @@
         </div>
 
         @stack('modals')
-
         @livewireScripts
         <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
+
+        {{-- Copy linkd to clipboard --}}
+        <script>
+            const copyToClipboard = () => {
+                const text = document.getElementById('linkdpageurl').innerHTML;
+                navigator.clipboard
+                    .writeText(text)
+                    .then(() => {
+                        document.getElementById('linkdpagebtn').innerText = 'Copied!'
+                    })
+                    .catch((err) => {
+                    console.error(`Error copying linkd url to clipboard: ${err}`);
+                });
+            };
+        </script>
     </body>
 </html>

@@ -10,6 +10,10 @@
 
     [x-cloak] { display: none !important; }
 
+    label {
+        @apply block font-medium text-sm text-gray-700;
+    }
+
     [type="text"],
     [type="email"],
     [type="url"],

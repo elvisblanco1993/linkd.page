@@ -65,6 +65,13 @@
                 </div>
             </div>
 
+            <div class="flex items-center">
+                <div class="text-xs text-gray-600 mr-2"><span class="text-gray-800 font-semibold">Your linkd:</span> <span id="linkdpageurl">{{config('app.url') . '/' . auth()->user()->page->handler}}</span></div>
+                <button onclick="copyToClipboard()" id="linkdpagebtn" class="text-xs border border-indigo-400 rounded-lg px-1 text-indigo-400 hover:text-indigo-600 transition">
+                    Copy
+                </button>
+            </div>
+
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

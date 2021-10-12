@@ -27,6 +27,9 @@
                     </div>
                 </li>
             @empty
+                <div class="text-center">
+                    Hi there! Add some links to your Linkd.
+                </div>
             @endforelse
         </ul>
     </div>

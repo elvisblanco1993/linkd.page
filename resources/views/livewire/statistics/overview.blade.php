@@ -44,5 +44,7 @@
                 var chart = new ApexCharts(document.querySelector("#chart"), options);
                 chart.render();
         </script>
+    @else
+        <div class="bg-white p-4 rounded-lg shadow-lg text-center">There's no suficient information at this time.</div>
     @endif
 </div>

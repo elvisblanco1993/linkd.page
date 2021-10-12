@@ -39,13 +39,13 @@ composer install && composer update;
 npm install && npm update;
 
 # Create Nginx File
-sudo nano /etc/nginx/sites-available/voicebits
+sudo nano /etc/nginx/sites-available/linkd
 
 # File content starts here
 server {
-    listen 80;
+    listen 81;
     server_name momo.local; # Edit this
-    root /home/elvis/Projects/app.voicebits.co/public; # Edit this
+    root /home/elvis/Projects/linkd.page/public; # Edit this
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -80,7 +80,7 @@ server {
 # File content ends here
 
 # Enable NGINX Site
-sudo ln -s /etc/nginx/sites-available/voicebits /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/linkd /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default;
 
 # Restart Nginx Server

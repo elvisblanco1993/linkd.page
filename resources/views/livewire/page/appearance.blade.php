@@ -1,5 +1,5 @@
 <div>
-    <div class="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-12 max-w-7xl mx-auto px-4">
         <div class="md:flex gap-8 space-y-8 sm:space-y-0">
             <div class="w-full md:w-2/3 xl:col-span-5">
                 <div class="w-full">
