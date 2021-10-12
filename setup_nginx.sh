@@ -115,6 +115,10 @@ php artisan migrate:fresh;
 # Activate the Stripe client for development (requires Stripe-Cli)
 stripe listen --forward-to localhost/stripe/webhook
 
+# Add Github Profile
+git config --global user.email "elvisblanco1993@gmail.com";
+git config --global user.name "Elvis Blanco Gonzalez";
+
 
 
 
