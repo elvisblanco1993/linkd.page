@@ -2,9 +2,9 @@
     <div class="py-12 max-w-7xl mx-auto px-4">
         <div class="md:flex gap-8 space-y-8 sm:space-y-0">
             <div class="w-full md:w-2/3 xl:col-span-5">
-                <div class="w-full overflow-auto h-screen">
+                <div class="w-full overflow-auto">
                     <div class="px-4" x-data="{ expanded: false }">
-                        <form wire:submit.prevent="saveProfile" class="p-4 bg-white rounded-lg shadow-lg">
+                        <form wire:submit.prevent="saveProfile" class="p-4 bg-white rounded-lg shadow">
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
                                     <div class="pr-8">
@@ -51,7 +51,7 @@
 
                         <div class="border-t my-6"></div>
 
-                        <div class="p-4 bg-white rounded-lg shadow-lg mb-8">
+                        <div class="p-4 bg-white rounded-lg shadow mb-8">
                             <button @click="expanded = ! expanded" class="border border-gray-400 px-2 py-1 text-xs rounded-lg text-gray-800 uppercase">Edit social media links</button>
 
                             <form wire:submit.prevent="saveSocialMedia" x-show="expanded" x-collapse.duration.1000ms x-cloak class="mt-4">

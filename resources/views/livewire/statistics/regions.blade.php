@@ -4,7 +4,7 @@
         <small class="font-medium text-gray-600">See where are your visitors coming from.</small>
     </div>
 
-    <div class="flex flex-col shadow-lg rounded-lg">
+    <div class="flex flex-col shadow rounded-lg">
         <div class="overflow-x-auto">
             <div class="align-middle inline-block min-w-full">
                 <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">

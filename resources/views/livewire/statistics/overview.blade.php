@@ -14,7 +14,7 @@
     </div>
 
     @if (count($totals) > 0)
-        <div id="chart" class="bg-white p-4 rounded-lg shadow-lg"></div>
+        <div id="chart" class="bg-white p-4 rounded-lg shadow"></div>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script>
             var options = {
@@ -45,6 +45,6 @@
                 chart.render();
         </script>
     @else
-        <div class="bg-white p-4 rounded-lg shadow-lg text-center">There's no suficient information at this time.</div>
+        <div class="bg-white text-sm p-4 rounded-lg shadow text-center">There's no suficient information at this time.</div>
     @endif
 </div>

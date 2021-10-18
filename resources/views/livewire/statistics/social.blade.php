@@ -13,7 +13,7 @@
 
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
         @forelse ($socials as $social)
-            <div class="h-44 bg-white p-4 rounded-lg shadow-lg flex flex-col items-center justify-center">
+            <div class="h-44 bg-white p-4 rounded-lg shadow flex flex-col items-center justify-center">
                 <img src="{{asset("assets/$social->type.svg")}}" alt="tiktok icon" class="w-6 h-6 opacity-80 mb-3"/>
                 <div class="text-3xl font-bold text-indigo-600">{{$social->total_clicks ?? 0}}</div>
                 <div class="text-xs font-medium text-gray-600">{{$social->type}}</div>

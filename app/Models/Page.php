@@ -20,6 +20,7 @@ class Page extends Model
         'font',
         'btnbg',
         'btnfg',
+        'btnstyle',
         'socpos',
         'soccolor'
     ];

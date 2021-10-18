@@ -31,4 +31,22 @@
     select {
         @apply border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm mt-1 block w-full;
     }
+
+    input[type="color"] {
+        -webkit-appearance: none;
+        @apply border border-gray-200;
+        border-radius: 20px;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+        border-radius: 20px;
+    }
+    input[type="color"]::-webkit-color-swatch {
+        border: none;
+        border-radius: 20px;
+    }
+
+    input:checked + label {
+        @apply border-indigo-300 ring ring-indigo-200 ring-opacity-50;
+    }
 }

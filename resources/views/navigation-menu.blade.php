@@ -61,15 +61,15 @@
                                 'rounded-lg' => Request::route()->named('linkd.appearance')
                             ])
                             >{{__("Appearance")}}</a>
+
+                        <div class="flex items-center border px-2 py-1 rounded-full border-indigo-200 bg-indigo-50">
+                            <span id="linkdpageurl" class="text-xs text-gray-600 mr-2">{{config('app.url') . '/' . auth()->user()->page->handler}}</span>
+                            <button onclick="copyToClipboard()" id="linkdpagebtn" class="text-xs border border-indigo-400 rounded-full px-2 text-indigo-400 hover:text-indigo-600 transition">
+                                Copy
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="flex items-center">
-                <div class="text-xs text-gray-600 mr-2"><span class="text-gray-800 font-semibold">Your linkd:</span> <span id="linkdpageurl">{{config('app.url') . '/' . auth()->user()->page->handler}}</span></div>
-                <button onclick="copyToClipboard()" id="linkdpagebtn" class="text-xs border border-indigo-400 rounded-lg px-1 text-indigo-400 hover:text-indigo-600 transition">
-                    Copy
-                </button>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -150,6 +150,10 @@
                                 {{ __('Manage Account') }}
                             </div>
 
+                            <x-jet-dropdown-link href="{{ route('billing') }}">
+                                {{ __('Billing') }}
+                            </x-jet-dropdown-link>
+
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
                                 {{ __('Profile') }}
                             </x-jet-dropdown-link>
@@ -214,6 +218,10 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
+                <x-jet-responsive-nav-link href="{{ route('billing') }}" :active="request()->routeIs('billing')">
+                    {{ __('Billing') }}
+                </x-jet-responsive-nav-link>
+
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>

@@ -13,7 +13,7 @@
             </select>
         </div>
     </div>
-    <div class="bg-white p-4 rounded-lg shadow-lg">
+    <div class="bg-white p-4 rounded-lg shadow">
         <ul class="mx-4">
             {{-- Implement Forelse here --}}
             @forelse ($totalsPerLink as $link)
@@ -22,7 +22,7 @@
                     <span>{{$link->total}}</span>
                 </li>
             @empty
-                <div class="text-center">There's no suficient information at this time.</div>
+                <div class="text-center text-sm">There's no suficient information at this time.</div>
             @endforelse
         </ul>
     </div>

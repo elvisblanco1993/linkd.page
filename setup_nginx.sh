@@ -6,10 +6,10 @@
 
 # Install web server packages
 sudo echo "deb [trusted=yes] https://apt.fury.io/meilisearch/ /" > /etc/apt/sources.list.d/fury.list;
-sudo apt install meilisearch-http;
+sudo apt install meilisearch-http supervisor;
 sudo add-apt-repository ppa:ondrej/php;
 sudo apt update;
-sudo apt install -y composer npm git php-mbstring php-xml php-fpm php-zip php-intl php-gd php-common php-fpm php-cli unzip curl php-curl nginx supervisor;
+sudo apt install -y composer npm git php-mbstring php-xml php-fpm php-zip php-intl php-gd php-common php-fpm php-cli unzip curl php-curl nginx;
 sudo apt install -y mysql-server php-mysql;
 sudo apt install sqlite3 php-sqlite3;
 

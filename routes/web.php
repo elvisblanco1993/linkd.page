@@ -4,7 +4,7 @@ use App\Http\Livewire\Page\Settings;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Livewire\Page\Appearance;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,7 @@ use App\Http\Livewire\Page\Appearance;
 */
 
 Route::get('/', function () {
-    // return view('web/home');
-    return redirect()->route('login');
+    return view('web/home');
 });
 
 Route::get('/{handler}', [PageController::class, 'public'])->name('linkd.public');
@@ -43,4 +42,11 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group( functio
      * Linkd settings page
      */
     Route::get('/settings', Settings::class)->name('linkd.settings');
+
+    /**
+     * Billing Portal
+     */
+    Route::get('/billing-portal', function (Request $request) {
+        return $request->user()->redirectToBillingPortal(route('dashboard'));
+    })->name('billing');
 });

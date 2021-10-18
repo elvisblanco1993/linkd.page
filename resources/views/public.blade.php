@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ $page->name ?? $page->handler }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -28,7 +28,7 @@
                 border-color: {{$page->btnbg}}
             }
             .preview-btn:hover {
-                background-color: {{$page->btnfg}};
+                background-color: transparent;
                 color: {{$page->btnbg}};
                 /* border-color: {{$page->btnbg}} */
             }

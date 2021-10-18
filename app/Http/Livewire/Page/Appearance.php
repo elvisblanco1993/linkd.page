@@ -11,7 +11,7 @@ class Appearance extends Component
 {
     use WithFileUploads;
 
-    public $btnfg, $btnbg, $socpos, $soccolor, $bgtype, $bgimage, $bgvalue, $textcolor;
+    public $btnfg, $btnbg, $btnstyle, $socpos, $soccolor, $bgtype, $bgimage, $bgvalue, $textcolor;
 
     public function save()
     {
@@ -42,6 +42,7 @@ class Appearance extends Component
             'textcolor' => $this->textcolor,
             'btnfg' => $this->btnfg,
             'btnbg' => $this->btnbg,
+            'btnstyle' => $this->btnstyle,
             'socpos' => $this->socpos, // social buttons position
             'soccolor' => $this->soccolor, // social buttons position
         ]);
@@ -53,10 +54,12 @@ class Appearance extends Component
     {
         $this->btnfg = auth()->user()->page->btnfg;
         $this->btnbg = auth()->user()->page->btnbg;
+        $this->btnstyle = auth()->user()->page->btnstyle;
         $this->socpos = auth()->user()->page->socpos;
         $this->soccolor = auth()->user()->page->soccolor;
         $this->bgvalue = auth()->user()->page->bgvalue;
         $this->textcolor = auth()->user()->page->textcolor;
+        // $this->bgtype = auth()->user()->page->bgtype;
 
         return view('livewire.page.appearance');
     }

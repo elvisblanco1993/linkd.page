@@ -27,6 +27,7 @@ class CreatePagesTable extends Migration
             $table->string('font')->nullable(); // font family
             $table->string('btnbg')->default('#000000');
             $table->string('btnfg')->default('#FFFFFF');
+            $table->string('btnstyle')->default('rounded-none');
             $table->enum('socpos', ['top', 'bottom'])->default('bottom'); // The position of the social media buttons
             $table->enum('soccolor', ['white', 'black'])->default('black'); // The color of the social media buttons' icons
             $table->timestamps();
