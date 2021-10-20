@@ -9,7 +9,6 @@
 
                             </div>
 
-
                             <div class="grid grid-cols-2 gap-4">
                                 {{-- Page Background --}}
                                 <div class="col-span-2">
@@ -29,7 +28,7 @@
 
                                             <div class="mt-4">
                                                 @if ($bgtype == 'image')
-                                                    <input type="file" id="bgimage" wire:model.defer="bgimage">
+                                                    <input type="file" id="bgimage" wire:model.defer="bgimage" class="text-xs sm:text-sm">
                                                 @endif
                                                 @if ($bgtype == 'color')
                                                     <input type="color" id="bgvalue" class="w-10 h-10 rounded-lg" wire:model.defer="bgvalue">

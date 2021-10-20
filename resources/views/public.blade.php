@@ -41,6 +41,7 @@
     </head>
     <body class="min-h-screen" id="site">
         <div class="font-sans antialiased">
+            @livewire('public.qr-modal', ['handler' => $page->handler])
             <div class="max-w-lg mx-auto mt-8 text-center p-4">
                 <img src="{{asset('storage/avatars/'.$page->avatar)}}" alt="" class="rounded-full w-24 sm:w-32 h-24 sm:h-32 shadow mt-2 mb-2 mx-auto object-cover">
                 <p class="mt-3 font-semibold text-base">{{$page->name}}</p>

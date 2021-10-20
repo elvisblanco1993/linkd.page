@@ -39,7 +39,7 @@
                                 <div class="grid grid-cols-2 items-center">
                                     <label for="avatar">Your avatar</label>
                                     <div class="">
-                                        <input type="file" wire:model="avatar">
+                                        <input type="file" wire:model="avatar" class="text-xs sm:text-sm">
                                         @error('bio') <span class="text-red-600">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
