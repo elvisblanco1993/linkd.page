@@ -14,7 +14,7 @@ sudo apt install -y mysql-server php-mysql;
 sudo apt install sqlite3 php-sqlite3;
 
 # Clone repository (Production only)
-git clone https://github.com/elvisblanco1993/voicebits.git;
+git clone https://github.com/elvisblanco1993/linkd.page.git;
 
 # Database Server Setup
 sudo mysql_secure_installation;
