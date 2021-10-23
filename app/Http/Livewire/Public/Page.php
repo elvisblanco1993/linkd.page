@@ -16,30 +16,25 @@ class Page extends Component
 
     public function linkCounter($uuid, $page_id)
     {
-        if ($position = Location::get()) {
+        if (Location::get( request()->ip() ) !== false) {
+            $position = Location::get( request()->ip() );
             // Successfully retrieved position.
             $country = $position->countryName;
             $state = $position->regionName;
             $city = $position->cityName;
             $clickthrough = +1;
-        } else {
-            // Failed retrieving position.
-            $country = "";
-            $state = "";
-            $city = "";
-            $clickthrough = "";
-        }
 
-        DB::table('clickthrough')->insert([
-            'uuid' => $uuid,
-            'page_id' => $page_id,
-            'country' => $country,
-            'state' => $state,
-            'city' => $city,
-            'clickthrough' => $clickthrough,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+            DB::table('clickthrough')->insert([
+                'uuid' => $uuid,
+                'page_id' => $page_id,
+                'country' => $country,
+                'state' => $state,
+                'city' => $city,
+                'clickthrough' => $clickthrough,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 
     public function socialCounter($uuid, $page_id)
