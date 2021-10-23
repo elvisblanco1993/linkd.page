@@ -22,8 +22,21 @@
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
 
+            @if (auth()->user()->onTrial())
+                <div class="w-full bg-yellow-200">
+                    <div class="max-w-7xl mx-auto text-center py-1 text-sm text-yellow-800 px-4 sm:px-6 lg:px-8 flex items-center gap-2">
+                        <span>
+                            Your trial will expire in {{ \Carbon\Carbon::now()->diffInDays(auth()->user()->trialEndsAt()) }} days. Subscribe now to continue to continue using <span class="text-indigo-500 font-bold">linkd</span>.
+                        </span>
+                        <a href="{{route('pricing')}}" class="flex items-center px-2 py-1 text-xs font-medium tracking-wider gap-2 rounded bg-indigo-400 text-white shadow">
+                            Subscribe
+                        </a>
+                    </div>
+                </div>
+            @endif
+
+            @livewire('navigation-menu')
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">

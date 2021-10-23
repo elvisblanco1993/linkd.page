@@ -3,6 +3,8 @@
 namespace App\Http\Livewire\Page;
 
 use App\Models\Page;
+use App\Models\Theme;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
@@ -13,9 +15,27 @@ class Appearance extends Component
 
     public $btnfg, $btnbg, $btnstyle, $socpos, $soccolor, $bgtype, $bgimage, $bgvalue, $textcolor;
 
+    /**
+     * Save theme
+     */
+    public function saveTheme($args)
+    {
+        $theme = Theme::where('page_id', auth()->user()->page->id)->first();
+        if (isset($theme)) {
+            $theme->update([
+                'args' => $args,
+            ]);
+        } else {
+            Theme::create([
+                'page_id' => auth()->user()->page->id,
+                'args' => $args,
+            ]);
+        }
+        return redirect()->route('linkd.appearance');
+    }
+
     public function save()
     {
-
         if (!is_null($this->bgtype)) {
             $bgtype = $this->bgtype;
             if ($this->bgtype == 'image') {

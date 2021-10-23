@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ $page->name ?? $page->handler }}</title>
+        <title>{{ $page->handler }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -16,10 +16,12 @@
         {{-- Custom Styling --}}
         <style>
             #site {
-                {{$pagebg}};
-                background-repeat: no-repeat;
-                background-position: center;
-                background-size: cover;
+               @if (!isset($page->theme))
+                    {{$pagebg}};
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+               @endif
                 color: {{$page->textcolor}}
             }
             .preview-btn {
@@ -39,7 +41,7 @@
         @livewireStyles
 
     </head>
-    <body class="min-h-screen" id="site">
+    <body id="site" class="min-h-screen @if($page->theme) {{$page->theme->args}} @endif">
         <div class="font-sans antialiased">
             @livewire('public.qr-modal', ['handler' => $page->handler])
             <div class="max-w-lg mx-auto mt-8 text-center p-4">

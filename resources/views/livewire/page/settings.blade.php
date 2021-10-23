@@ -91,7 +91,7 @@
                                                 @class([
                                                     'w-5',
                                                     'filter',
-                                                    'opacity-30'=>is_null($facebook)])
+                                                    'opacity-30'=>is_null($messenger)])
                                                     >
                                         <input type="text" wire:model.defer="messenger" placeholder="https://messenger.com/...">
                                     </div>

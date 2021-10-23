@@ -36,4 +36,9 @@ class Page extends Model
     {
         return $this->hasMany(Link::class);
     }
+
+    public function theme()
+    {
+        return $this->hasOne(Theme::class);
+    }
 }

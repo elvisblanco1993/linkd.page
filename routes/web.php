@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('web/home');
 });
 
+Route::prefix('linkd')->get('/pricing', function () {
+    return view('web/pricing');
+})->name('pricing');
+
 Route::get('/{handler}', [PageController::class, 'public'])->name('linkd.public');
 
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group( function () {
@@ -49,4 +53,30 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group( functio
     Route::get('/billing-portal', function (Request $request) {
         return $request->user()->redirectToBillingPortal(route('dashboard'));
     })->name('billing');
+
+    /**
+     * Subscribe to Monthly Plan
+     */
+    Route::get('/monthly-subscription-checkout', function (Request $request) {
+        return $request->user()
+            ->newSubscription('linkd', config('plans.price_monthly'))
+            ->allowPromotionCodes()
+            ->checkout([
+                'success_url' => route('dashboard'),
+                'cancel_url' => route('pricing'),
+            ]);
+    })->name('subscribe.monthly');
+
+    /**
+     * Subscribe to Yearly Plan
+     */
+    Route::get('/yearly-subscription-checkout', function (Request $request) {
+        return $request->user()
+            ->newSubscription('linkd', config('plans.price_yearly'))
+            ->allowPromotionCodes()
+            ->checkout([
+                'success_url' => route('dashboard'),
+                'cancel_url' => route('pricing'),
+            ]);
+    })->name('subscribe.yearly');
 });

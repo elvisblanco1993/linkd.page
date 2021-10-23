@@ -4,11 +4,58 @@
             <div class="w-full md:w-2/3 xl:col-span-5">
                 <div class="w-full">
                     <div class="px-4">
-                        <form wire:submit.prevent="save" class="p-4 bg-white rounded-lg shadow">
-                            <div class="grid grid-cols-2 gap-4">
-
+                        <div class="mb-4">
+                            <div class="text-lg">Quick styles</div>
+                            <div class="text-sm text-gray-600">Apply a quick theme to your linkd.</div>
+                        </div>
+                        <div class="grid grid-cols-4 gap-8 mb-8">
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-pink-500 to-yellow-500">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-pink-500 to-yellow-500')">
+                                    Apply
+                                </button>
                             </div>
-
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-green-300 to-indigo-400">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-green-300 to-indigo-400')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-green-300 to-yellow-400">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-green-300 to-yellow-400')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-blue-500 to-red-300">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-blue-500 to-red-300')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-pink-500 to-blue-200">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-pink-500 to-blue-200')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-gray-800 to-gray-600">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-gray-800 to-gray-600')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-gray-600 to-gray-400">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-gray-600 to-gray-400')">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-gray-400 to-gray-200">
+                                <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-gray-400 to-gray-200')">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                        <div class="my-4 border-t"></div>
+                        <div class="mb-4">
+                            <div class="text-lg">Fine tunning</div>
+                            <div class="text-sm text-gray-600">Make your brand pop with custom styles.</div>
+                        </div>
+                        <form wire:submit.prevent="save" class="p-4 bg-white rounded-lg shadow">
                             <div class="grid grid-cols-2 gap-4">
                                 {{-- Page Background --}}
                                 <div class="col-span-2">

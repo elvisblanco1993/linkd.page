@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -31,6 +32,7 @@ class CreateNewUser implements CreatesNewUsers
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'trial_ends_at' => Carbon::now()->addMonth(1),
         ]);
 
         $user->createAsStripeCustomer();

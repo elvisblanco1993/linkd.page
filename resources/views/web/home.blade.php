@@ -1,49 +1,70 @@
 <x-guest-layout>
-    <div class="max-w-7xl mx-auto">
-        <div class="w-full flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
-            <div class="">
-                <div class="text-xl font-base tracking-wide text-indigo-600">linkd</div>
-            </div>
-
-            <div class="">
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-        </div>
-    </div>
-
-    {{-- Section 1 --}}
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 gap-8 py-36 items-center text-center sm:text-left">
-            <div class="col-span-2 sm:col-span-1">
-                <div class="text-4xl sm:text-6xl font-black mb-8">
-                    One <span class="text-indigo-600">linkd</span> to rule them all
-                </div>
-                <div class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11 text-gray-600">
-                    The best way to connect your audiences with your content
-                </div>
-                <div class="mt-8">
-                    <button class="px-6 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-all text-white uppercase font-medium">Get your linkd</button>
-                </div>
-            </div>
-            <div class="col-span-2 sm:col-span-1 flex justify-center sm:justify-end">
+    <div class="min-h-screen flex flex-col justify-between">
+        <div class="w-full max-w-7xl mx-auto">
+            <div class="w-full flex items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
                 <div class="">
-                    <iframe src="http://localhost:81/@_ebg93" frameborder="0" scrolling="no" class="w-[320px] h-[580px] border-4 border-gray-800 rounded-3xl shadow-xl"></iframe>
+                    <a href="/" class="text-xl font-base tracking-wide text-indigo-600">linkd</a>
+                </div>
+
+                <div class="">
+                    @if (Route::has('login'))
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        @else
+                            <a href="{{ route('pricing') }}" class="text-sm text-gray-700 dark:text-gray-500">Pricing</a>
+
+                            <a href="{{ route('login') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-green-700 rounded-lg border border-green-200 dark:text-gray-500 capitalize px-4 py-1 bg-green-100">Get started</a>
+                            @endif
+                        @endauth
+                    @endif
                 </div>
             </div>
         </div>
+
+        {{-- Section 1 --}}
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 gap-8 py-36 items-center text-center sm:text-left">
+                <div class="col-span-2 sm:col-span-1">
+                    <div class="text-4xl sm:text-6xl font-black mb-8">
+                        One <span class="text-indigo-600">linkd</span> to rule them all
+                    </div>
+                    <div class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-11 text-gray-600">
+                        The best way to connect your audiences with your content
+                    </div>
+                    <div class="mt-8">
+                        <a href="{{route('register')}}" class="px-6 py-3 rounded-lg bg-indigo-500 hover:bg-indigo-600 transition-all text-white uppercase font-medium">Get your linkd</a>
+                    </div>
+                </div>
+                <div class="col-span-2 sm:col-span-1 flex justify-center sm:justify-end">
+                    <div class="w-[320px] h-[580px] border-4 text-center border-gray-800 rounded-3xl shadow-xl bg-gradient-to-tr from-green-300 to-blue-200 p-4">
+                        <img src="https://i.pravatar.cc/300" alt="" class="rounded-full w-24 sm:w-32 h-24 sm:h-32 shadow mt-8 mb-2 mx-auto object-cover">
+                        <p class="mt-3 font-semibold text-base">@yourname</p>
+
+                        <div class="w-full flex flex-col my-4">
+                            <a href="" class="w-full text-sm text-center font-semibold px-4 py-3 mb-4 transition rounded-lg bg-gray-800 border border-gray-800 hover:bg-transparent text-white hover:text-gray-800">Website</a>
+                            <a href="" class="w-full text-sm text-center font-semibold px-4 py-3 mb-4 transition rounded-lg bg-gray-800 border border-gray-800 hover:bg-transparent text-white hover:text-gray-800">Personal Blog</a>
+                            <a href="" class="w-full text-sm text-center font-semibold px-4 py-3 mb-4 transition rounded-lg bg-gray-800 border border-gray-800 hover:bg-transparent text-white hover:text-gray-800">Online Store</a>
+                            <a href="" class="w-full text-sm text-center font-semibold px-4 py-3 mb-4 transition rounded-lg bg-gray-800 border border-gray-800 hover:bg-transparent text-white hover:text-gray-800">Podcast</a>
+                        </div>
+
+                        <div class="w-full">
+                            <a  href="" class="inline-block w-6 h-6 text-center bg-center mx-2"><img src="{{asset("assets/facebook.svg")}}" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"></a>
+                            <a  href="" class="inline-block w-6 h-6 text-center bg-center mx-2"><img src="{{asset("assets/instagram.svg")}}" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"></a>
+                            <a  href="" class="inline-block w-6 h-6 text-center bg-center mx-2"><img src="{{asset("assets/twitter.svg")}}" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"></a>
+                            <a  href="" class="inline-block w-6 h-6 text-center bg-center mx-2"><img src="{{asset("assets/youtube.svg")}}" class="inline-block w-6 h-6 transform hover:-translate-y-1 hover:scale-110 transition"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Footer --}}
+        @include('web.footer')
     </div>
 
-    <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+    {{-- <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
         <div class="py-36 flex items-center justify-center">
             <div class="w-full sm:w-1/2">
                 <div class="text-2xl sm:text-4xl font-black">
@@ -62,7 +83,6 @@
 
         <div class="py-32 sm:py-12 flex items-center">
             <div class="w-full sm:w-1/2">
-                {{--  --}}
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="text-2xl sm:text-4xl font-black">
@@ -84,13 +104,11 @@
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
-                {{--  --}}
             </div>
         </div>
 
         <div class="py-32 sm:py-12 flex items-center">
             <div class="w-full sm:w-1/2">
-                {{--  --}}
             </div>
             <div class="w-full sm:w-1/2">
                 <div class="text-2xl sm:text-4xl font-black">
@@ -112,9 +130,8 @@
                 </div>
             </div>
             <div class="w-full sm:w-1/2">
-                {{--  --}}
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </x-guest-layout>
