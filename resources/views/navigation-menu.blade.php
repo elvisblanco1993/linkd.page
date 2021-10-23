@@ -199,6 +199,18 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('linkd.links') }}" :active="request()->routeIs('linkd.links')">
+                {{ __('Links') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('linkd.settings') }}" :active="request()->routeIs('linkd.settings')">
+                {{ __('Bio & Social') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('linkd.appearance') }}" :active="request()->routeIs('linkd.appearance')">
+                {{ __('Appearance') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
