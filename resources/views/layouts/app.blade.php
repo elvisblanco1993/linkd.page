@@ -23,7 +23,7 @@
 
         <div class="min-h-screen bg-gray-100">
 
-            @if (auth()->user()->onTrial())
+            @if (auth()->user()->onTrial() && ! auth()->user()->subscribed('linkd'))
                 <div class="w-full bg-yellow-200">
                     <div class="max-w-7xl mx-auto text-center py-1 text-sm text-yellow-800 px-4 sm:px-6 lg:px-8 flex items-center gap-2">
                         <span>
