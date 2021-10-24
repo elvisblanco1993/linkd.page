@@ -7,11 +7,11 @@
                         <form wire:submit.prevent="saveProfile" class="p-4 bg-white rounded-lg shadow">
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
-                                    <div class="pr-8">
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <label for="handler" class="block">Handler</label>
                                         <small class="text-gray-600">Changing your handler will affect your linkd url.</small>
                                     </div>
-                                    <div class="">
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <input type="text" wire:model.defer="handler" placeholder="@yourhandler">
                                         @error('handler') <span class="text-red-600">{{ $message }}</span> @enderror
                                     </div>
@@ -19,8 +19,8 @@
                             </div>
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
-                                    <label for="name">Your Name</label>
-                                    <div class="">
+                                    <label for="name" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your Name</label>
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <input type="text" wire:model.defer="name" placeholder="Your Name">
                                         @error('name') <span class="text-red-600">{{ $message }}</span> @enderror
                                     </div>
@@ -28,8 +28,8 @@
                             </div>
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2">
-                                    <label for="bio">Biography</label>
-                                    <div class="">
+                                    <label for="bio" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Biography</label>
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <textarea rows="6" placeholder="Introduce yourself..." wire:model.defer="bio"></textarea>
                                         @error('bio') <span class="text-red-600">{{ $message }}</span> @enderror
                                     </div>
@@ -37,7 +37,7 @@
                             </div>
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
-                                    <label for="avatar">Your avatar</label>
+                                    <label for="avatar" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your avatar</label>
                                     <div class="">
                                         <input type="file" wire:model="avatar" class="text-xs sm:text-sm">
                                         @error('bio') <span class="text-red-600">{{ $message }}</span> @enderror

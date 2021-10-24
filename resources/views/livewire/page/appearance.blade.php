@@ -8,7 +8,7 @@
                             <div class="text-lg">Quick styles</div>
                             <div class="text-sm text-gray-600">Apply a quick theme to your linkd.</div>
                         </div>
-                        <div class="grid grid-cols-4 gap-8 mb-8">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                             <div class="flex items-center justify-center gap-2 w-full h-36 shadow rounded-xl bg-gradient-to-tr from-pink-500 to-yellow-500">
                                 <button class="px-3 py-1 bg-white rounded bg-opacity-80 text-sm font-medium text-gray-600 shadow" wire:click="saveTheme('bg-gradient-to-tr from-pink-500 to-yellow-500')">
                                     Apply
@@ -60,7 +60,7 @@
                                 {{-- Page Background --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="bgtype">Page background</label>
+                                        <label for="bgtype" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Page background</label>
                                         <div class="">
                                             <div class="col-span-2 sm:col-span-1 flex items-center gap-4">
                                                 <div class="flex items-center gap-4 px-4 py-2 border rounded-md">
@@ -90,18 +90,18 @@
                                 {{-- Page Text --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="textcolor">Page text color</label>
+                                        <label for="textcolor" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Page text color</label>
                                         <input type="color" id="textcolor" class="w-10 h-10" wire:model.defer="textcolor" placeholder="#000000">
                                     </div>
                                 </div>
 
                                 <div class="col-span-2 border-t"></div>
                                 {{-- Button Style --}}
-                                <div class="col-span-2 flex itens-center justify-between">
-                                    <div class="w-1/2">
+                                <div class="col-span-2 grid grid-cols-2 items-center">
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <label>Button corners</label>
                                     </div>
-                                    <div class="w-1/2">
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <div class="grid grid-cols-3 gap-4">
                                             <div>
                                                 <input class="hidden" id="radio_1" type="radio" wire:model.defer="btnstyle" value="rounded-none" name="btnradio" checked>
@@ -130,7 +130,7 @@
                                 {{-- Button Background --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="btnbg">Button background color</label>
+                                        <label for="btnbg" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Button background color</label>
                                         <input type="color" id="btnbg" class="w-10 h-10" wire:model.defer="btnbg" placeholder="#FFFFFF">
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                 {{-- Button text --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="btnfg">Button text color</label>
+                                        <label for="btnfg" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Button text color</label>
                                         <input type="color" id="btnfg" class="w-10 h-10" wire:model.defer="btnfg" placeholder="#000000">
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                 {{-- Social Media Buttons Position --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="socpos">Social media position</label>
+                                        <label for="socpos" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Social media position</label>
                                         <select wire:model.defer="socpos" id="socpos" class="w-full">
                                             <option value=""></option>
                                             <option value="top">Top</option>
@@ -159,7 +159,7 @@
                                 {{-- Social Media Buttons Color --}}
                                 <div class="col-span-2">
                                     <div class="grid grid-cols-2 items-center">
-                                        <label for="soccolor">Social media color</label>
+                                        <label for="soccolor" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Social media color</label>
                                         <select wire:model.defer="soccolor" id="soccolor" class="w-full">
                                             <option value=""></option>
                                             <option value="black">Black</option>
