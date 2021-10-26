@@ -75,7 +75,8 @@
 
                                             <div class="mt-4">
                                                 @if ($bgtype == 'image')
-                                                    <input type="file" id="bgimage" wire:model.defer="bgimage" class="text-xs sm:text-sm">
+                                                    <input type="file" accept="image/png,jpg,jpeg" id="bgimage" wire:model.defer="bgimage" class="text-xs sm:text-sm">
+                                                    @error('bgimage') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                                 @endif
                                                 @if ($bgtype == 'color')
                                                     <input type="color" id="bgvalue" class="w-10 h-10 rounded-lg" wire:model.defer="bgvalue">

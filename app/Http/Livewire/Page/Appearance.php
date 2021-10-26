@@ -39,6 +39,9 @@ class Appearance extends Component
         if (!is_null($this->bgtype)) {
             $bgtype = $this->bgtype;
             if ($this->bgtype == 'image') {
+                $this->validate([
+                    'bgimage' => 'required|max:2048|mimes:png,jpg,jpeg'
+                ]);
                 // Delete current background image if any.
                 if (auth()->user()->page->bgvalue) {
                     Storage::delete('public/backgrounds/'. auth()->user()->page->bgvalue);
