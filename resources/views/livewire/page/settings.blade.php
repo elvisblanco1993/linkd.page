@@ -13,7 +13,7 @@
                                     </div>
                                     <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <input type="text" wire:model.defer="handler" placeholder="@yourhandler">
-                                        @error('handler') <span class="text-red-600">{{ $message }}</span> @enderror
+                                        @error('handler') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -22,7 +22,7 @@
                                     <label for="name" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your Name</label>
                                     <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <input type="text" wire:model.defer="name" placeholder="Your Name">
-                                        @error('name') <span class="text-red-600">{{ $message }}</span> @enderror
+                                        @error('name') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                             </div>
@@ -31,16 +31,19 @@
                                     <label for="bio" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Biography</label>
                                     <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
                                         <textarea rows="6" placeholder="Introduce yourself..." wire:model.defer="bio"></textarea>
-                                        @error('bio') <span class="text-red-600">{{ $message }}</span> @enderror
+                                        @error('bio') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
-                                    <label for="avatar" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your avatar</label>
+                                    <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
+                                        <label for="avatar" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your avatar</label>
+                                        <small class="text-gray-600">Accepts png, jpg, and jpeg under 2mb.</small>
+                                    </div>
                                     <div class="">
                                         <input type="file" wire:model="avatar" class="text-xs sm:text-sm">
-                                        @error('bio') <span class="text-red-600">{{ $message }}</span> @enderror
+                                        @error('avatar') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
                             </div>

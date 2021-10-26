@@ -24,7 +24,7 @@
     <script>
         new QRCode(document.getElementById("qrcode"), {
             text: "{{ $linkdQr }}",
-            colorDark : "#495361",
+            colorDark : "#212b39",
 	        colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
         });

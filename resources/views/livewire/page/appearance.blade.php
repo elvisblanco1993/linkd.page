@@ -105,21 +105,21 @@
                                         <div class="grid grid-cols-3 gap-4">
                                             <div>
                                                 <input class="hidden" id="radio_1" type="radio" wire:model.defer="btnstyle" value="rounded-none" name="btnradio" checked>
-                                                <label class="text-center border p-2 border-gray-300 cursor-pointer" for="radio_1">
+                                                <label class="text-center border p-2 border-gray-300 cursor-pointer text-xs sm:text-sm" for="radio_1">
                                                     Sharp
                                                 </label>
                                             </div>
 
                                             <div>
                                                 <input class="hidden" id="radio_2" type="radio" wire:model.defer="btnstyle" value="rounded-lg" name="btnradio">
-                                                <label class="text-center border p-2 rounded-lg border-gray-300 cursor-pointer" for="radio_2">
+                                                <label class="text-center border p-2 rounded-lg border-gray-300 cursor-pointer text-xs sm:text-sm" for="radio_2">
                                                     Rounded
                                                 </label>
                                             </div>
 
                                             <div>
                                                 <input class="hidden" id="radio_3" type="radio" wire:model.defer="btnstyle" value="rounded-full" name="btnradio">
-                                                <label class="text-center border p-2 rounded-full border-gray-300 cursor-pointer" for="radio_3">
+                                                <label class="text-center border p-2 rounded-full border-gray-300 cursor-pointer text-xs sm:text-sm" for="radio_3">
                                                     Rounded Full
                                                 </label>
                                             </div>

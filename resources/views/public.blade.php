@@ -45,7 +45,11 @@
         <div class="font-sans antialiased">
             @livewire('public.qr-modal', ['handler' => $page->handler])
             <div class="max-w-lg mx-auto mt-8 text-center p-4">
+                @if (isset($page->avatar))
                 <img src="{{asset('storage/avatars/'.$page->avatar)}}" alt="" class="rounded-full w-24 sm:w-32 h-24 sm:h-32 shadow mt-2 mb-2 mx-auto object-cover">
+                @else
+                <img src="{{asset('assets/Portrait_Placeholder.png')}}" alt="" class="rounded-full w-24 sm:w-32 h-24 sm:h-32 shadow mt-2 mb-2 mx-auto object-cover">
+                @endif
                 <p class="mt-3 font-semibold text-base">{{$page->name}}</p>
                 <p class="mt-1 text-sm">{{$page->handler}}</p>
                 <p class="mt-2 mb-4 text-sm">{{$page->bio}}</p>

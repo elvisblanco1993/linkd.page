@@ -46,12 +46,16 @@ class Settings extends Component
             'handler' => "required|regex:/^\S*$/u|unique:pages,handler,$page_id"
         ]);
         if (!is_null($this->avatar)) {
+
+            $this->validate([
+                'avatar' => 'max:2048|mimes:png,jpg,jpeg'
+            ]);
+
             if (auth()->user()->page->avatar) {
                 Storage::delete('public/avatars/'. auth()->user()->page->avatar);
             }
             $this->avatar->storeAs('public/avatars', $this->avatar->getClientOriginalName());
         }
-
 
         Page::where('user_id', auth()->user()->id)
             ->update([
