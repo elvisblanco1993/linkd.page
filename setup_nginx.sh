@@ -29,9 +29,9 @@ FLUSH PRIVILEGES;
 exit;
 
 # Setting Folder Permissions
-sudo chgrp -R www-data . ;
-sudo chown -R www-data:www-data storage;
-sudo chown -R www-data:www-data bootstrap/cache;
+sudo chgrp -R elvis . ;
+sudo chown -R elvis:www-data storage;
+sudo chown -R elvis:www-data bootstrap/cache;
 chmod -R 775 ./storage;
 chmod -R 775 bootstrap/cache;
 
@@ -43,7 +43,7 @@ sudo nano /etc/nginx/sites-available/linkd
 
 # File content starts here
 server {
-    listen 81;
+    listen 80;
     server_name momo.local; # Edit this
     root /home/elvis/Projects/linkd.page/public; # Edit this
 

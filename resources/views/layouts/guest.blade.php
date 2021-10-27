@@ -7,6 +7,13 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        {{-- OpenGraph Tags --}}
+        <meta property="og:title" content="One Linkd To Tule Them All - Linkd!">
+        <meta property="og:url" content="https://linkd.page">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="The best way to connect your audiences with your content, while keeping privacy on.">
+        <meta property="og:image" content="{{asset('assets/linkdimage.png')}}">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
