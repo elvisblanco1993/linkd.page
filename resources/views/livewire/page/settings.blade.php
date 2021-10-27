@@ -42,7 +42,10 @@
                                         <small class="text-gray-600">Accepts png, jpg, and jpeg under 2mb.</small>
                                     </div>
                                     <div class="">
-                                        <input type="file" wire:model="avatar" class="text-xs sm:text-sm">
+                                        <div class="relative">
+                                            <input type="file" id="avatar" accept="image/png,jpg,jpeg" wire:model="avatar" class="hidden absolute w-full h-10">
+                                            <label for="avatar" class="w-full h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Upload image</label>
+                                        </div>
                                         @error('avatar') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>

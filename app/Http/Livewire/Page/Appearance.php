@@ -2,9 +2,7 @@
 
 namespace App\Http\Livewire\Page;
 
-use App\Models\Page;
 use App\Models\Theme;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
