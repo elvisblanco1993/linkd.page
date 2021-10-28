@@ -23,6 +23,7 @@
                         height: 400
                     },
                     series: [{
+                        name: 'Monthly Clicks',
                         data: [
                             @forelse ($totals as $click)
                                 {
