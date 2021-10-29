@@ -63,13 +63,13 @@
                                         <label for="bgtype" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Page background</label>
                                         <div class="">
                                             <div class="col-span-2 sm:col-span-1 flex items-center gap-4">
-                                                <div class="relative">
+                                                <div class="w-1/2">
                                                     <input type="radio" wire:model="bgtype" name="bgtype" id="color" value="color" @click="open = false" class="hidden w-full">
-                                                    <label for="color" class="w-1/2 h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Color</label>
+                                                    <label for="color" class="w-full h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Color</label>
                                                 </div>
-                                                <div class="relative">
+                                                <div class="w-1/2">
                                                     <input type="radio" wire:model="bgtype" name="bgtype" id="image" value="image" @click="open = true" class="hidden w-full">
-                                                    <label for="image" class="w-1/2 h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Image</label>
+                                                    <label for="image" class="w-full h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Image</label>
                                                 </div>
                                             </div>
 
