@@ -15,6 +15,7 @@ class Link extends Model
         'order',
         'uuid',
         'clickthrough',
+        'expirates_at',
     ];
 
     use HasFactory;

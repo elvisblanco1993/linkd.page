@@ -22,12 +22,14 @@
     {{-- Links --}}
     <div class="w-full flex flex-col my-4">
         @forelse ($links as $link)
-            <a
+            @if (\Carbon\Carbon::now() <= $link->expirates_at || !$link->expirates_at)
+                <a
                 href="{{$link->url}}"
                 class="w-full {{$page->btnstyle}} text-sm text-center font-semibold px-4 py-3 mb-4 transition preview-btn border hover:bg-opacity-25"
                 target="_blank"
                 wire:click="$emit('linkClicked', '{{$link->uuid}}', '{{$page->id}}')"
                 >{{$link->title}}</a>
+            @endif
         @empty
         @endforelse
     </div>

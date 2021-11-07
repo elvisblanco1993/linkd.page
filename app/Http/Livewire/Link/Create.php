@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Link;
 
 use App\Models\Link;
+use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Str;
 
@@ -15,12 +16,28 @@ class Create extends Component
     public $bgcolor;
     public $textcolor;
 
+    public $expiration_year;
+    public $expiration_month;
+    public $expiration_day;
+    public $expiration_hour;
+    public $expiration_minute;
+
     public function save()
     {
+
         $this->validate([
             'title' => 'required',
             'url' => 'required|url',
         ]);
+
+        $expiration_date = Carbon::create(
+                                $this->expiration_year,
+                                $this->expiration_month,
+                                $this->expiration_day,
+                                $this->expiration_hour,
+                                $this->expiration_minute,
+                                0
+                            )->format('Y-m-d H:i:s') ?? null;
 
         try {
             Link::create([
@@ -29,6 +46,7 @@ class Create extends Component
                 'title' => $this->title,
                 'url' => $this->url,
                 'uuid' => Str::uuid()->toString(),
+                'expirates_at' => $expiration_date
             ]);
 
             // Update the preview
