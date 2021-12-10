@@ -35,15 +35,24 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="text-right">
+                                <x-jet-button>Save</x-jet-button>
+                            </div>
+                        </form>
+
+                        <div class="border-t my-6"></div>
+
+                        <div class="p-4 bg-white rounded-lg shadow">
                             <div class="text-left mb-2">
                                 <div class="grid grid-cols-2 items-center">
                                     <div class="col-span-2 md:col-span-1 mb-1 md:mb-0">
-                                        <label for="avatar" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Your avatar</label>
-                                        <small class="text-gray-600">Accepts png, jpg, and jpeg under 2mb.</small>
+                                        <label for="avatar" class="col-span-2 md:col-span-1 mb-1 md:mb-0">Profile Image</label>
+                                        <small class="text-gray-600">It can be a logo or a picture of you. Accepts png, jpg, and jpeg under 2mb.</small>
                                     </div>
                                     <div class="">
                                         <div class="relative">
-                                            <input type="file" id="avatar" accept="image/png,jpg,jpeg" wire:model="avatar" class="hidden absolute w-full h-10">
+                                            <input type="file" id="avatar" accept="image/png,jpg,jpeg" wire:model.defer="avatar" class="hidden absolute w-full h-10">
                                             <label for="avatar" class="w-full h-10 flex items-center justify-center border-2 border-dashed rounded-lg hover:border-gray-300 cursor-pointer">Upload image</label>
                                         </div>
                                         @error('avatar') <span class="text-red-600 text-sm block">{{ $message }}</span> @enderror
@@ -51,9 +60,9 @@
                                 </div>
                             </div>
                             <div class="text-right">
-                                <x-jet-button>Save</x-jet-button>
+                                <x-jet-button wire:click="uploadAvatar">Save</x-jet-button>
                             </div>
-                        </form>
+                        </div>
 
                         <div class="border-t my-6"></div>
 

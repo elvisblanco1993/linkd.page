@@ -45,17 +45,7 @@ class Settings extends Component
         $this->validate([
             'handler' => "required|regex:/^\S*$/u|unique:pages,handler,$page_id"
         ]);
-        if (!is_null($this->avatar)) {
 
-            $this->validate([
-                'avatar' => 'max:2048|mimes:png,jpg,jpeg'
-            ]);
-
-            if (auth()->user()->page->avatar) {
-                Storage::delete('public/avatars/'. auth()->user()->page->avatar);
-            }
-            $this->avatar->storeAs('public/avatars', $this->avatar->getClientOriginalName());
-        }
 
         Page::where('user_id', auth()->user()->id)
             ->update([
@@ -97,6 +87,28 @@ class Settings extends Component
                 ->whereNotNull('type')
                 ->where('url', '')
                 ->delete();
+        }
+
+        return redirect()->route('linkd.settings');
+    }
+
+    public function uploadAvatar()
+    {
+        if (!is_null($this->avatar)) {
+
+            $this->validate([
+                'avatar' => 'max:2048|mimes:png,jpg,jpeg'
+            ]);
+
+            if (auth()->user()->page->avatar) {
+                Storage::delete('public/avatars/'. auth()->user()->page->avatar);
+            }
+            $this->avatar->storeAs('public/avatars', $this->avatar->getClientOriginalName());
+
+            Page::where('user_id', auth()->user()->id)
+            ->update([
+                'avatar' => (!is_null($this->avatar)) ? $this->avatar->getClientOriginalName() : auth()->user()->page->avatar
+            ]);
         }
 
         return redirect()->route('linkd.settings');

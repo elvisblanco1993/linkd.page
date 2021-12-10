@@ -30,14 +30,16 @@ class Create extends Component
             'url' => 'required|url',
         ]);
 
-        $expiration_date = Carbon::create(
-                                $this->expiration_year,
-                                $this->expiration_month,
-                                $this->expiration_day,
-                                $this->expiration_hour,
-                                $this->expiration_minute,
-                                0
-                            )->format('Y-m-d H:i:s') ?? null;
+        $expiration_date = (isset($this->expiration_day) && isset($this->expiration_hour)) ? Carbon::create(
+                                                                                                    $this->expiration_year,
+                                                                                                    $this->expiration_month,
+                                                                                                    $this->expiration_day,
+                                                                                                    $this->expiration_hour,
+                                                                                                    $this->expiration_minute,
+                                                                                                    0
+                                                                                                )->format('Y-m-d H:i:s')
+                                                                                            :
+                                                                                            null;
 
         try {
             Link::create([
