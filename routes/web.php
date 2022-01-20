@@ -30,7 +30,7 @@ Route::prefix('linkd')->get('/support', function () {return view('web.support');
 
 Route::get('/{handler}', [PageController::class, 'public'])->name('linkd.public');
 
-Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group( function () {
+Route::middleware(['auth:sanctum', 'verified', 'subscription.check' ])->prefix('admin')->group( function () {
     /**
      * Linkd home page
      */
