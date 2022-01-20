@@ -16,8 +16,7 @@
                                 <div class="text-sm font-semibold">{{$customer->name}}</div>
                                 <div class="mt-1 text-xs text-gray-600 tracking-wide">
                                     <a href="{{config('app.url') . '/' . $customer->page->handler }}" class="flex items-center gap-1 hover:text-indigo-600">
-
-                                        {{$customer->page->handler}}
+                                        {{$customer->page}}
                                     </a>
                                 </div>
                             </div>
