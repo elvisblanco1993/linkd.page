@@ -15,52 +15,72 @@
                     <div class="flex items-center">
                         <a href="{{route('dashboard')}}"
                             @class([
-                                'text-sm',
+                                'text-xs',
                                 'text-gray-600',
                                 'mr-4',
-                                'px-2',
+                                'px-2 py-1',
+                                'tracking-wide',
                                 'font-medium',
                                 'bg-indigo-500' => Request::route()->named('dashboard'),
                                 'text-white' => Request::route()->named('dashboard'),
-                                'rounded-lg' => Request::route()->named('dashboard')
+                                'rounded-full' => Request::route()->named('dashboard')
                             ])
                             >{{__("Dashboard")}}</a>
                         <a href="{{route('linkd.links')}}"
                             @class([
-                                'text-sm',
+                                'text-xs',
                                 'text-gray-600',
                                 'mr-4',
-                                'px-2',
+                                'px-2 py-1',
+                                'tracking-wide',
                                 'font-medium',
                                 'bg-indigo-500' => Request::route()->named('linkd.links'),
                                 'text-white' => Request::route()->named('linkd.links'),
-                                'rounded-lg' => Request::route()->named('linkd.links')
+                                'rounded-full' => Request::route()->named('linkd.links')
                             ])
                             >{{__("Links")}}</a>
                         <a href="{{route('linkd.settings')}}"
                             @class([
-                                'text-sm',
+                                'text-xs',
                                 'text-gray-600',
                                 'mr-4',
-                                'px-2',
+                                'px-2 py-1',
+                                'tracking-wide',
                                 'font-medium',
                                 'bg-indigo-500' => Request::route()->named('linkd.settings'),
                                 'text-white' => Request::route()->named('linkd.settings'),
-                                'rounded-lg' => Request::route()->named('linkd.settings')
+                                'rounded-full' => Request::route()->named('linkd.settings')
                             ])
                             >{!!__("Bio &amp; Social")!!}</a>
                         <a href="{{route('linkd.appearance')}}"
                             @class([
-                                'text-sm',
+                                'text-xs',
                                 'text-gray-600',
                                 'mr-4',
-                                'px-2',
+                                'px-2 py-1',
+                                'tracking-wide',
                                 'font-medium',
                                 'bg-indigo-500' => Request::route()->named('linkd.appearance'),
                                 'text-white' => Request::route()->named('linkd.appearance'),
-                                'rounded-lg' => Request::route()->named('linkd.appearance')
+                                'rounded-full' => Request::route()->named('linkd.appearance')
                             ])
                             >{{__("Appearance")}}</a>
+
+                        @can('admin')
+                        <a href="{{route('customers')}}"
+                        @class([
+                            'text-xs',
+                            'text-gray-600',
+                            'mr-4',
+                            'px-2 py-1',
+                            'tracking-wide',
+                            'font-medium',
+                            'bg-indigo-500' => Request::route()->named('customers'),
+                            'text-white' => Request::route()->named('customers'),
+                            'rounded-full' => Request::route()->named('customers')
+                        ])
+                        >{{__("Customers")}}</a>
+                        @endcan
 
                         <div class="flex items-center border px-2 py-1 rounded-full border-indigo-200 bg-indigo-50">
                             <span id="linkdpageurl" class="text-xs text-gray-600 mr-2">{{config('app.url') . '/' . auth()->user()->page->handler}}</span>

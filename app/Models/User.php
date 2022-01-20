@@ -67,4 +67,15 @@ class User extends Authenticatable
     {
         return $this->hasOne(Page::class);
     }
+
+    /**
+     * Route notifications for the Slack channel.
+     *
+     * @param  \Illuminate\Notifications\Notification  $notification
+     * @return string
+     */
+    public function routeNotificationForSlack($notification)
+    {
+        return config('slack.notify_hook');
+    }
 }

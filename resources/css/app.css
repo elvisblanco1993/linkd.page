@@ -49,4 +49,8 @@
     input:checked + label {
         @apply border-indigo-300 ring ring-indigo-200 ring-opacity-50;
     }
+
+    .aspect-video {
+        aspect-ratio: 16 / 9;
+    }
 }

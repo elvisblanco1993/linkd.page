@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Http\Request;
 use App\Http\Livewire\Page\Settings;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 use App\Http\Livewire\Page\Appearance;
-use Illuminate\Http\Request;
+use App\Http\Controllers\PageController;
+use App\Http\Livewire\Customers\Index;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,8 @@ Route::get('/', function () {
 Route::prefix('linkd')->get('/pricing', function () {
     return view('web/pricing');
 })->name('pricing');
+
+Route::prefix('linkd')->get('/support', function () {return view('web.support');})->name('support');
 
 Route::get('/{handler}', [PageController::class, 'public'])->name('linkd.public');
 
@@ -79,4 +83,11 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group( functio
                 'cancel_url' => route('pricing'),
             ]);
     })->name('subscribe.yearly');
+});
+
+/**
+ * Administrator only Routes
+ */
+Route::middleware(['auth:sanctum', 'verified', 'can:admin'])->prefix('admin')->group(function () {
+    Route::get('/customers', Index::class)->name('customers');
 });

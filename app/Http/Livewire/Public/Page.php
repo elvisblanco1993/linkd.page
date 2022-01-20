@@ -14,6 +14,9 @@ class Page extends Component
 
     public $listeners = ['linkClicked' => 'linkCounter', 'socialClicked' => 'socialCounter'];
 
+    /**
+     * Records the links clickthrough for live instance only. Won't work in development.
+     */
     public function linkCounter($uuid, $page_id)
     {
         if (Location::get( request()->ip() ) !== false) {

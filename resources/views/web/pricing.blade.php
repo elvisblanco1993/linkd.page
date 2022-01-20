@@ -27,7 +27,7 @@
                 <div class="text-4xl font-extrabold">
                     One price fits all
                 </div>
-                <div class="text-xl font-bold">
+                <div class="text-xl mt-4">
                     With our all-inclusive plan, you get all the features for the most affordable price in the market.
                 </div>
             </div>
